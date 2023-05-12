@@ -1,5 +1,11 @@
+import SearchForm from './components/SearchForm';
+
 const Home = (): JSX.Element => {
-  return <div>Home</div>;
+  return (
+    <>
+      <SearchForm />
+    </>
+  );
 };
 
 export default Home;
