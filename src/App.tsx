@@ -1,14 +1,5 @@
-import { useState } from 'react'
+const App = (): JSX.Element => {
+  return <h1 className="text-3xl font-bold">Hello world!</h1>;
+};
 
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-     asds
-    </div>
-  )
-}
-
-export default App
+export default App;
