@@ -1,3 +1,3 @@
-export type Action<T> = { type: T; payload?: unknown };
+export type Action<T, P = undefined> = { type: T; payload?: P };
 
-export type Handlers<T extends string, S> = Record<T | 'default', (state: S, action: Action<T>) => S>;
+export type Handlers<S, A extends Action<string, unknown>> = Record<A['type'] | 'default', (state: S, action: A) => S>;

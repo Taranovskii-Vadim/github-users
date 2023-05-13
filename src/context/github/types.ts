@@ -1,6 +1,6 @@
-import { SET_ERROR, SET_LOADING, SET_USERS } from './constants';
+import { Action } from '../types';
 
-export type ActionType = typeof SET_ERROR | typeof SET_LOADING | typeof SET_USERS;
+import { SET_ERROR, SET_LOADING, SET_USERS } from './constants';
 
 export type User = {
   id: number;
@@ -17,3 +17,5 @@ export type State = {
 export type Functions = {
   handleSearch: (value: string) => Promise<void>;
 };
+
+export type Actions = Action<typeof SET_USERS, User[]> | Action<typeof SET_LOADING> | Action<typeof SET_ERROR>;
