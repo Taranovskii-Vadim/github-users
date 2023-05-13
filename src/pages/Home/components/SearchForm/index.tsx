@@ -1,13 +1,17 @@
 import { FormEvent, useState } from 'react';
 
-const SearchForm = (): JSX.Element => {
+interface Props {
+  onSearch: (value: string) => void;
+}
+
+const SearchForm = ({ onSearch }: Props): JSX.Element => {
   const [value, setValue] = useState('');
 
   //   TODO instead of submit can add debounce search
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
-    console.log(value);
+    onSearch(value);
 
     setValue('');
   };

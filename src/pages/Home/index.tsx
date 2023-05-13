@@ -5,11 +5,15 @@ import { GitHubContext } from '../../context/github';
 import SearchForm from './components/SearchForm';
 
 const Home = (): JSX.Element => {
-  const { data } = useContext(GitHubContext);
+  const context = useContext(GitHubContext);
+
+  if (!context) {
+    return <div>no context...</div>;
+  }
 
   return (
     <>
-      <SearchForm />
+      <SearchForm onSearch={context.handleSearch} />
     </>
   );
 };
