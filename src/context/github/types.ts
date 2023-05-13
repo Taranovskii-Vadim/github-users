@@ -1,8 +1,6 @@
-// TODO check defaults types in react maybe there are ts types under the hood
+import { SET_ERROR, SET_LOADING, SET_USERS } from './constants';
 
-export type Actions = {
-  handleSearch: (value: string) => Promise<void>;
-};
+export type ActionType = typeof SET_ERROR | typeof SET_LOADING | typeof SET_USERS;
 
 export type User = {
   id: number;
@@ -16,6 +14,6 @@ export type State = {
   isLoading: boolean;
 };
 
-export type Action = { type: string; payload?: unknown };
-
-export type Handlers = Record<string, (state: State, action: Action) => State>;
+export type Functions = {
+  handleSearch: (value: string) => Promise<void>;
+};

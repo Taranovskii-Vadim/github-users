@@ -4,8 +4,8 @@ import { api } from '../../api';
 import getUsers from '../../api/getUsers';
 
 import reducer from './reducer';
-import { Actions, State } from './types';
-import { SET_LOADING, SET_USERS } from './constants';
+import { Functions, State } from './types';
+import { SET_ERROR, SET_LOADING, SET_USERS } from './constants';
 
 const initialState: State = {
   data: [],
@@ -14,17 +14,23 @@ const initialState: State = {
 };
 
 // @ts-ignore
-export const GitHubContext = createContext<State & Actions>();
+export const GitHubContext = createContext<State & Functions>();
 
-// TODO think how to type dispatch
 export const GitHubState = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSearch = async (value: string) => {
-    dispatch({ type: SET_LOADING });
-    const payload = await api(getUsers, value);
+    try {
+      dispatch({ type: SET_LOADING });
 
-    dispatch({ type: SET_USERS, payload });
+      const payload = await api(getUsers, value);
+
+      dispatch({ type: SET_USERS, payload });
+    } catch (e) {
+      dispatch({ type: SET_ERROR });
+    } finally {
+      dispatch({ type: SET_LOADING });
+    }
   };
 
   return <GitHubContext.Provider value={{ ...state, handleSearch }}>{children}</GitHubContext.Provider>;
