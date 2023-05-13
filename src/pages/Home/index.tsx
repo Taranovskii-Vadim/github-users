@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { GitHubContext } from '../../context/github';
+import { GitHubContext } from 'src/context/github';
 
 import UserCard from './components/UserCard';
 import SearchForm from './components/SearchForm';

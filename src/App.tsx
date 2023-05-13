@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { getRoutes } from './routes';
-import { GitHubState } from './context/github';
+import { getRoutes } from 'src/routes';
+import { GitHubState } from 'src/context/github';
 
-import Navbar from './components/Navbar';
+import Navbar from 'src/components/Navbar';
 
 const App = (): JSX.Element => {
   const routes = getRoutes();

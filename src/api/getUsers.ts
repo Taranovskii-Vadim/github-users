@@ -1,4 +1,5 @@
-import { User } from '../context/github/types';
+import { User } from 'src/context/github/types';
+
 import { Method, Route } from './types';
 
 const CLIENT_ID = '4317963456a8c7b100e6';

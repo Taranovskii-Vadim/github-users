@@ -1,4 +1,4 @@
-import { User } from '../../../../context/github/types';
+import { User } from 'src/context/github/types';
 
 interface Props {
   data: User;

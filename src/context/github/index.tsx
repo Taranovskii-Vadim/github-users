@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useReducer } from 'react';
 
-import { api } from '../../api';
-import getUsers from '../../api/getUsers';
+import { api } from 'src/api';
+import getUsers from 'src/api/getUsers';
 
 import reducer from './reducer';
 import { Functions, State } from './types';

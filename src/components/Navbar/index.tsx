@@ -1,7 +1,6 @@
-// TODO add alias on src
 import { NavLink } from 'react-router-dom';
 
-import { getLinks } from '../../routes';
+import { getLinks } from 'src/routes';
 
 const Navbar = (): JSX.Element => {
   const links = getLinks();
