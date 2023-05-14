@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 import { Route } from './types';
 
-const baseURL = 'https://api.github.com/search';
+const baseURL = 'https://api.github.com';
 
 const axiosInsatnce = axios.create({ baseURL });
 

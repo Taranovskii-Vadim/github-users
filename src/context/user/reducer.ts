@@ -1,12 +1,12 @@
 import { Handlers } from '../types';
 
-import { Actions, State, User } from './types';
 import { SET_ERROR, SET_LOADING, SET_DATA } from './constants';
+import { Actions, State, User } from './types';
 
 const handlers: Handlers<State, Actions> = {
   [SET_ERROR]: (state) => ({ ...state, error: 'error' }),
   [SET_LOADING]: (state) => ({ ...state, isLoading: !state.isLoading }),
-  [SET_DATA]: (state, { payload }) => ({ ...state, data: payload as User[] }),
+  [SET_DATA]: (state, { payload }) => ({ ...state, data: payload as User }),
   default: (state) => state,
 };
 

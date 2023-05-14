@@ -10,6 +10,8 @@ const ROOT = '/';
 const NODES: Nodes = { home: <Home />, about: <About />, profile: <Profile /> };
 const PATHS: Paths = { home: ROOT, about: `${ROOT}about`, profile: `${ROOT}profile/:name` };
 
+export const getProfilePagePath = (name: string): string => `${ROOT}profile/${name}`;
+
 export const getLinks = (): Link[] => [
   { text: 'Домашняя страница', to: PATHS.home },
   { text: 'О продукте', to: PATHS.about },

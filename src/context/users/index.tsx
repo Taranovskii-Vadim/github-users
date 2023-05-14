@@ -5,7 +5,7 @@ import getUsers from 'src/api/getUsers';
 
 import reducer from './reducer';
 import { Functions, State } from './types';
-import { SET_ERROR, SET_LOADING, SET_USERS } from './constants';
+import { SET_ERROR, SET_LOADING, SET_DATA } from './constants';
 
 const initialState: State = {
   data: [],
@@ -25,7 +25,7 @@ export const UsersState = ({ children }: { children: ReactNode }) => {
 
       const payload = await api(getUsers, value);
 
-      dispatch({ type: SET_USERS, payload });
+      dispatch({ type: SET_DATA, payload });
     } catch (e) {
       dispatch({ type: SET_ERROR });
     } finally {

@@ -1,3 +1,3 @@
-export const SET_USERS = 'github/SET_USERS';
-export const SET_ERROR = 'github/SET_ERROR';
-export const SET_LOADING = 'github/SET_LOADING';
+export const SET_DATA = 'users/SET_DATA';
+export const SET_ERROR = 'users/SET_ERROR';
+export const SET_LOADING = 'users/SET_LOADING';
