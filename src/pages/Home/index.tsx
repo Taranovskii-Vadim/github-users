@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 
-import { GitHubContext } from 'src/context/github';
+import { UsersContext } from 'src/context/users';
 
 import UserCard from './components/UserCard';
 import SearchForm from './components/SearchForm';
 
 const Home = (): JSX.Element => {
-  const { data, handleSearch } = useContext(GitHubContext);
+  const { data, handleSearch } = useContext(UsersContext);
 
   return (
     <>

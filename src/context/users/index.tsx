@@ -14,9 +14,9 @@ const initialState: State = {
 };
 
 // @ts-ignore
-export const GitHubContext = createContext<State & Functions>();
+export const UsersContext = createContext<State & Functions>();
 
-export const GitHubState = ({ children }: { children: ReactNode }) => {
+export const UsersState = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSearch = async (value: string) => {
@@ -33,5 +33,5 @@ export const GitHubState = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  return <GitHubContext.Provider value={{ ...state, handleSearch }}>{children}</GitHubContext.Provider>;
+  return <UsersContext.Provider value={{ ...state, handleSearch }}>{children}</UsersContext.Provider>;
 };

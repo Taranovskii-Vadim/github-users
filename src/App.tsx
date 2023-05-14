@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { getRoutes } from 'src/routes';
-import { GitHubState } from 'src/context/github';
+import { UsersState } from 'src/context/users';
 
 import Navbar from 'src/components/Navbar';
 
@@ -14,13 +14,13 @@ const App = (): JSX.Element => {
       <Navbar />
       <div className="container w-3/4 m-auto mt-6">
         <Suspense fallback={<div>loading...</div>}>
-          <GitHubState>
+          <UsersState>
             <Routes>
               {routes.map(({ id, ...other }) => (
                 <Route key={id} {...other} />
               ))}
             </Routes>
-          </GitHubState>
+          </UsersState>
         </Suspense>
       </div>
     </>

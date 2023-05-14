@@ -1,4 +1,4 @@
-import { User } from 'src/context/github/types';
+import { User } from 'src/context/users/types';
 
 import { Method, Route } from './types';
 
