@@ -7,6 +7,11 @@ import { UsersState } from 'src/context/users';
 
 import Navbar from 'src/components/Navbar';
 
+// Checklist (when reset time of github api will expire)
+// Finish profile page
+// Finish about product page
+// Remove all todos
+
 const App = (): JSX.Element => {
   const routes = getRoutes();
 
