@@ -7,7 +7,6 @@ interface Props {
 const SearchForm = ({ onSearch }: Props): JSX.Element => {
   const inp = useRef<HTMLInputElement>(null);
 
-  //   TODO instead of submit can add debounce search
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 

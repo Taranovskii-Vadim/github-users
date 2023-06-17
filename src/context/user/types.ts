@@ -12,10 +12,20 @@ export type User = {
   createdAt: string;
 };
 
-export type State = StateTemplate<User | undefined>;
+export type Repository = {
+  id: number;
+  name: string;
+  private: boolean;
+  language: string;
+  forks: number;
+};
+
+export type DataPayload = { profile: User; repos: Repository[] };
+
+export type State = StateTemplate<DataPayload | undefined>;
 
 export type Functions = {
   fetchData: (value: string | undefined) => Promise<void>;
 };
 
-export type Actions = Action<typeof SET_DATA, User> | Action<typeof SET_LOADING> | Action<typeof SET_ERROR>;
+export type Actions = Action<typeof SET_DATA, DataPayload> | Action<typeof SET_LOADING> | Action<typeof SET_ERROR>;

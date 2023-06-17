@@ -28,9 +28,9 @@ export const UserState = ({ children }: { children: ReactNode }) => {
 
       dispatch({ type: SET_LOADING });
 
-      const [user, repos] = await Promise.all([api(getUser, value), api(getRepositories, value)]);
+      const [profile, repos] = await Promise.all([api(getUser, value), api(getRepositories, value)]);
 
-      dispatch({ type: SET_DATA, payload: user });
+      dispatch({ type: SET_DATA, payload: { profile, repos } });
     } catch (e) {
       dispatch({ type: SET_ERROR });
     } finally {
