@@ -11,7 +11,6 @@ import Navbar from 'src/components/Navbar';
 // 1) add loader
 // 2) fetch data using debounce not from submit
 // 3) finish about product page
-// 4) Fix eslint errors/wranings
 
 const App = (): JSX.Element => {
   const routes = getRoutes();
