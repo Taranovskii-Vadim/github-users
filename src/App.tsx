@@ -8,7 +8,6 @@ import { UsersState } from 'src/context/users';
 import Navbar from 'src/components/Navbar';
 
 // Checklist (when reset time of github api will expire)
-// Finish profile page
 // Finish about product page
 // Fix eslint errors/wranings
 // Remove all todos

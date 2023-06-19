@@ -98,7 +98,7 @@ class GetRepositories implements Route {
       id,
       name,
       forks,
-      language,
+      language: language || '-',
       private: other.private,
     }));
   }

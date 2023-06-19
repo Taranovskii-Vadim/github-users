@@ -28,7 +28,15 @@ class GetUser implements Route {
   }
 
   getData({ id, login, avatar_url, location, email, followers, created_at }: ResponseDTO): User {
-    return { id, login, avatar: avatar_url, location, email, followers, createdAt: created_at };
+    return {
+      id,
+      login,
+      avatar: avatar_url,
+      location: location || '-',
+      email: email || '-',
+      followers,
+      createdAt: created_at,
+    };
   }
 }
 
