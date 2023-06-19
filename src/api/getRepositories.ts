@@ -1,7 +1,7 @@
 import { Repository } from 'src/context/user/types';
 
 import { CREDS } from './constants';
-import { Method, Route } from './types';
+import { CommonUserDTO, Method, Route } from './types';
 
 interface ResponseDTO {
   allow_forking: boolean;
@@ -71,8 +71,7 @@ interface ResponseDTO {
   statuses_url: string;
   subscribers_url: string;
   subscription_url: string;
-  // TODO fix any to commonUser or smth
-  owner: any;
+  owner: CommonUserDTO;
   svn_url: string;
   tags_url: string;
   teams_url: string;

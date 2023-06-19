@@ -7,10 +7,11 @@ import { UsersState } from 'src/context/users';
 
 import Navbar from 'src/components/Navbar';
 
-// Checklist (when reset time of github api will expire)
-// Finish about product page
-// Fix eslint errors/wranings
-// Remove all todos
+// Checklist for future
+// 1) add loader
+// 2) fetch data using debounce not from submit
+// 3) finish about product page
+// 4) Fix eslint errors/wranings
 
 const App = (): JSX.Element => {
   const routes = getRoutes();
