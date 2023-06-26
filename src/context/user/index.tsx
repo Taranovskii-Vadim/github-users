@@ -6,7 +6,7 @@ import getRepositories from 'src/api/getRepositories';
 
 import reducer from './reducer';
 import { Functions, State } from './types';
-import { SET_ERROR, SET_LOADING, SET_DATA } from './constants';
+import { SET_ERROR, SET_LOADING, SET_DATA, RESET_DATA } from './constants';
 
 const initialState: State = {
   data: undefined,
@@ -38,5 +38,7 @@ export const UserState = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  return <UserContext.Provider value={{ ...state, fetchData }}>{children}</UserContext.Provider>;
+  const resetData = (): void => dispatch({ type: RESET_DATA });
+
+  return <UserContext.Provider value={{ ...state, fetchData, resetData }}>{children}</UserContext.Provider>;
 };

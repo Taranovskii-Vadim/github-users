@@ -7,11 +7,6 @@ import { UsersState } from 'src/context/users';
 
 import Navbar from 'src/components/Navbar';
 
-// Checklist for future
-// 1) add loader
-// 2) fetch data using debounce not from submit
-// 3) finish about product page
-
 const App = (): JSX.Element => {
   const routes = getRoutes();
 
